@@ -3,10 +3,18 @@ import SearchBar from './SearchBar';
 import ContactList from './ContactList';
 
 class ContactsApp extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      filterText: ''
+    };
+  }
+
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar filterText={this.state.filterText} />
         <ContactList contacts={this.props.contacts} />
       </div>
     );
